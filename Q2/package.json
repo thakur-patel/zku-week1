@@ -12,5 +12,8 @@
   },
   "scripts": {
     "test": "node scripts/bump-solidity.js && npx hardhat test"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5"
   }
 }
