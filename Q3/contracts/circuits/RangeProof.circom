@@ -12,4 +12,15 @@ template RangeProof(n) {
     component gt = GreaterEqThan(n);
 
     // [assignment] insert your code here
+    lt.in[0] <== in;
+    lt.in[1] <== range[1];
+
+    gt.in[0] <== in;
+    gt.in[1] <== range[0];
+
+    out <== lt.out * gt.out;
+    // out === 1; // the check won't be placed here. it will be there in test.js
 }
+
+// used this for testing since there needs to be main component to compile the circuits
+// component main = RangeProof(32);
