@@ -29,12 +29,6 @@ template SystemOfEquations(n) { // n is the number of variables in the system of
         eq[i].in[0] <== b[i];
         eq[i].in[1] <== product.out[i][0];
         bool[i] <== eq[i].out;
-        
-        // THIS DOES NOT WORK
-        // b[i] === product.out[i][0];
-        // if(b[i] == product.out[i][0]){
-        //     total++;
-        // } 
     }
 
     signal boolProd[n];
@@ -44,14 +38,6 @@ template SystemOfEquations(n) { // n is the number of variables in the system of
         boolProd[i] <== boolProd[i-1] * bool[i];
     }
     out <== boolProd[n-1];
-
-    // THIS DOES NOT WORK
-    // if(total == n){
-    //     out<==1;
-    // }
-    // else{
-    //     out<==0;
-    // }
 
 }
 
